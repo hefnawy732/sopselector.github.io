@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP Selector</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url(test/gro.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            width: 350px;
+            transition: transform 0.2s;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fdfdfd;
+            text-align: center;
+            background: linear-gradient(90deg, #ffffff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        select {
+            padding: 12px;
+            margin-top: 10px;
+            border: 2px solid #00f138;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        select:hover {
+            border-color: #00b342;
+        }
+        button {
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #00b30c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #00b30c;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 400px) {
+            .container {
+                width: 90%;
+            }
+        }
+        img.img-fluid {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    margin: 10px; /* Optional: Adds some space from the edges */
+    max-width: 120px; /* Optional: Sets a maximum width to ensure it doesn't occupy too much space */
+}
+    </style>
+</head>
+<body>
+    <img src="test/elGroIcon.png" class="img-fluid" alt="...">
+
+
+    <div class="container">
+        <h1>Select the desired SOP</h1>
+        <select id="sopSelector">
+            <option value="">Select an option</option>
+            <option value="darkstore">Darkstore</option>
+            <option value="cs">CS</option>
+            <option value="log">Logistics</option>
+            <option value="dis">Dispatch</option>
+            <option value="mp">MarketPlace</option>
+
+
+
+        </select>
+        <button onclick="openSOP()">Open SOP</button>
+    </div>
+
+    <script>
+        function openSOP() {
+            const selector = document.getElementById('sopSelector');
+            const selectedValue = selector.value;
+
+            if (selectedValue === 'darkstore') {
+                window.open('https://hefnawy732.github.io/darkstoresop.github.io/', '_blank');
+            } else if (selectedValue === 'cs') {
+                window.open('https://hefnawy732.github.io/cssop.github.io/', '_blank');
+            }
+              else if (selectedValue === 'log') {
+                    window.open('https://hefnawy732.github.io/logisticssop.github.io/', '_blank');
+            } else if (selectedValue === 'dis') {
+                    window.open('https://hefnawy732.github.io/dispatchsop.github.io/', '_blank');
+            }else if (selectedValue === 'mp') {
+                    window.open('https://hefnawy732.github.io/matketplacesop.github.io/', '_blank');
+            }
+             else {
+                alert('Please select an option.');
+            }
+        }
+    </script>
+
+</body>
+</html>
